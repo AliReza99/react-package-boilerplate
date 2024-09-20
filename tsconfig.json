@@ -2,17 +2,17 @@
   "compilerOptions": {
     "rootDir": "src",
     "strict": true, // Optional: Enable strict type-checking
-    "target": "ES2020",
-    "module": "ES2020",
+    "target": "ESNext",
+    "module": "ESNext",
     "declaration": true, // Generates type declaration files (.d.ts)
     "outDir": "./dist", // Output directory for compiled files
     "moduleResolution": "node",
     "esModuleInterop": true, // Ensures ES module compatibility
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "jsx": "react",
+    "forceConsistentCasingInFileNames": true,
+    "declarationDir": "dist"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"],
-  "ts-node": {
-    "esm": true
-  }
+  "exclude": ["node_modules", "dist"]
 }
