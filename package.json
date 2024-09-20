@@ -1,5 +1,5 @@
 {
-  "name": "package-boilerplate",
+  "name": "react-package-boilerplate",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -10,7 +10,7 @@
     "lint:prettier": "prettier --check --cache ./src/**/*.{js,jsx,ts,tsx}",
     "prettify": "prettier --write --cache ./src/**/*.{js,jsx,ts,tsx}",
     "lint": "tsc --noEmit && eslint --cache --cache-location ./node_modules/.cache/eslint/ --quiet --ext .js,.jsx,.ts,.tsx,.mjs src",
-    "build": "tsc",
+    "build": "tsup src/index.ts --format esm --dts",
     "do-link": "npm link"
   },
   "dependencies": {
