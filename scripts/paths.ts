@@ -8,6 +8,6 @@ export const resolveFromRoot = (relativePath: string) => path.resolve(__dirname,
 export const paths = {
   projectRoot: resolveFromRoot('.'),
   packageJson: resolveFromRoot('package.json'),
-  tailwindCssFile: resolveFromRoot('./dist/tailwind.css'),
-  safelistFile: resolveFromRoot('./dist/safelist.js'),
+  tailwindSourceFile: resolveFromRoot('./src/tailwind.css'),
+  safelistFile: resolveFromRoot('./src/tailwindSafelist.ts'),
 };
