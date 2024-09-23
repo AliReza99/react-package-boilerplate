@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "strict": true, // Optional: Enable strict type-checking
+    "target": "ESNext",
+    "module": "ESNext",
+    "declaration": true, // Generates type declaration files (.d.ts)
+    "outDir": "./dist", // Output directory for compiled files
+    "moduleResolution": "node",
+    "esModuleInterop": true, // Ensures ES module compatibility
+    "skipLibCheck": true,
+    "jsx": "react",
+    "forceConsistentCasingInFileNames": true,
+    "declarationDir": "dist"
+  },
+  "include": ["."],
+  "exclude": []
+}
