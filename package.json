@@ -14,11 +14,12 @@
     "lint:prettier": "prettier --check --cache ./src/**/*.{js,jsx,ts,tsx}",
     "prettify": "prettier --write --cache ./src/**/*.{js,jsx,ts,tsx}",
     "lint": "tsc --noEmit && eslint --cache --cache-location ./node_modules/.cache/eslint/ --quiet --ext .js,.jsx,.ts,.tsx,.mjs src",
-    "build": "tsup src/index.ts --format esm --dts",
+    "build:src": "tsup src/index.ts --format esm --dts",
     "build:css": "postcss src/*.css --dir dist",
-    "build:all": "rm -rf ./dist/* && npm run build && npm run build:css",
+    "build:safelist": "tsup src/tailwindSafelist.ts --format esm --dts",
+    "build:all": "rm -rf ./dist/* && npm run generate:safelist && npm run build:safelist && npm run build:src && npm run build:css",
     "do-link": "npm link",
-    "extractClasses": "bun run ./scripts/extractClasses.ts"
+    "generate:safelist": "bun run ./scripts/tailwindSafelist.ts"
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
