@@ -15,8 +15,8 @@
     "prettify": "prettier --write --cache ./src/**/*.{js,jsx,ts,tsx}",
     "lint": "tsc --noEmit && eslint --cache --cache-location ./node_modules/.cache/eslint/ --quiet --ext .js,.jsx,.ts,.tsx,.mjs src",
     "build": "tsup src/index.ts --format esm --dts",
-    "build:css": "postcss src/styles.css -o dist/styles.css",
-    "build:all": "npm run build && npm run build:css",
+    "build:css": "postcss src/*.css --dir dist",
+    "build:all": "rm -rf ./dist/* && npm run build && npm run build:css",
     "do-link": "npm link"
   },
   "dependencies": {
