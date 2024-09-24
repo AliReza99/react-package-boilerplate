@@ -15,10 +15,11 @@
     "lint:prettier": "prettier --check --cache ./src/**/*.{js,jsx,ts,tsx}",
     "prettify": "prettier --write --cache ./src/**/*.{js,jsx,ts,tsx}",
     "lint": "tsc --noEmit && eslint --cache --cache-location ./node_modules/.cache/eslint/ --quiet --ext .js,.jsx,.ts,.tsx,.mjs src",
+    "prebuild": "rimraf dist",
     "build:src": "tsup src/index.ts --format esm --dts",
     "build:css": "postcss src/*.css --dir dist",
     "build:safelist": "tsup src/tailwindSafelist.ts --format esm --dts",
-    "build:all": "rm -rf ./dist/* && npm run generate:safelist && npm run build:safelist && npm run build:src && npm run build:css",
+    "build:all": "npm run generate:safelist && npm run build:safelist && npm run build:src && npm run build:css",
     "do-link": "npm link",
     "generate:safelist": "bun run ./scripts/tailwindSafelist.ts",
     "release:patch": "npm version patch",
@@ -44,6 +45,7 @@
     "eslint": "^8.48.0",
     "prettier": "^3.0.3",
     "tsup": "^8.3.0",
+    "rimraf": "^6.0.1",
     "typescript": "^5.6.2"
   }
 }
