@@ -1,15 +1,16 @@
 {
-  "name": "react-package-boilerplate",
+  "name": "@arazor1911/react-package-boilerplate",
+  "private": false,
   "version": "1.0.0",
+  "author": "Alireza Bahrani",
   "description": "",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "author": "Alireza Bahrani",
   "files": [
     "dist"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "lint:prettier": "prettier --check --cache ./src/**/*.{js,jsx,ts,tsx}",
     "prettify": "prettier --write --cache ./src/**/*.{js,jsx,ts,tsx}",
@@ -19,7 +20,11 @@
     "build:safelist": "tsup src/tailwindSafelist.ts --format esm --dts",
     "build:all": "rm -rf ./dist/* && npm run generate:safelist && npm run build:safelist && npm run build:src && npm run build:css",
     "do-link": "npm link",
-    "generate:safelist": "bun run ./scripts/tailwindSafelist.ts"
+    "generate:safelist": "bun run ./scripts/tailwindSafelist.ts",
+    "release:patch": "npm version patch",
+    "release:major": "npm version major",
+    "release:private": "npm publish --access=restricted",
+    "release:public": "npm publish --access=public"
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
